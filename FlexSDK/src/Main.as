@@ -15,11 +15,11 @@ package
 	//Custom classes declaration : 
 	//應用程式框架	
 	import com.intustu.framework.core.*;
-	import com.intustu.framework.factories.abstracts.AbstractGameFactory;
+	import com.intustu.framework.factories.AbstractGameFactory;
 	import com.intustu.framework.managers.core.*;
 	//專案客製
-	import com.intustu.projects.appFramework.managers.*;
-	import com.intustu.projects.appFramework.factories.*;
+	import com.intustu.common.managers.ClassFrameworkFactory;
+	import com.intustu.projects.standard.GameMain;
 	
 	//use metaTage define size and preloader
 	[SWF(width="1000",height="700",frameRate="30",backgroundColor="#cccccc")]
@@ -41,7 +41,7 @@ package
 			//預先定義和登記需要使用到的類別
 			preDefineClasses();
 			
-			if (mode === 'single')
+			if (mode === 'singleton')
 			{
 				AppShell.setFactory(new AbstractGameFactory(classParser.getClass('game')));
 				myApp = AppShell.getInstance(coordinate) as GameInstance;
@@ -73,7 +73,8 @@ package
 			classParser = ClassResolverSingleton.getInstance();
             //TODO , register useful defined classes :
 			// classDefines.registerClass(ClassName , 'custom classID');
+			return true;
 		}
 	
-	}//endOfClass
-}
+	}//EndOfClass
+}//EndOfPackage

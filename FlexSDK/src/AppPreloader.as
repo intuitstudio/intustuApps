@@ -10,7 +10,7 @@ package
 	import flash.events.IOErrorEvent;
 	import flash.events.ProgressEvent;
 	import flash.utils.getDefinitionByName;	
-	import com.intustu.framework.Preloader;	
+	import com.intustu.framework.core.Preloader;	
 
 	public class AppPreloader extends Preloader 
 	{		
